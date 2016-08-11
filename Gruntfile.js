@@ -186,6 +186,12 @@ module.exports = function(grunt){
                 cwd: 'app/script',
                 src: '*.js',
                 dest: '<%= config.folder %>/script'
+            },
+            appHtml: {
+                expand: true,
+                cwd: 'app',
+                src: ['*.html'],
+                dest: '<%= config.folder %>'
             }
         },
         /**
@@ -214,6 +220,10 @@ module.exports = function(grunt){
             appJs: {
                 files: "app/script/*.js",
                 tasks: ["copy:appJs"]
+            },
+            appHtml: {
+                files: "app/*.html",
+                tasks: ["copy:appHtml"]
             }
         },
         /**
